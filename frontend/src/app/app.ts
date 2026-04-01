@@ -1,9 +1,9 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { PubNavbar } from './shared/public';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [PubNavbar],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
