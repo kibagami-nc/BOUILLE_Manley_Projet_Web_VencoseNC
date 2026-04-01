@@ -8,7 +8,7 @@ Vencose.nc est une application web de vente en ligne (particuliers à particulie
 ## Liens du projet
 
 - **Tableau Kanban (suivi des tâches)** : [GitHub Projects](https://github.com/users/kibagami-nc/projects/4)
-- **Maquettes Figma** : [Vencose.nc — Design](https://www.figma.com/site/jzYelDeQAQlzcwf4nUKlYx/Vencose.nc?node-id=0-1&t=Y5bY7yGDNFI88zfR-1)
+- **Maquettes Figma** : [Vencose.nc — Design](https://www.figma.com/site/jzYelDeQAQlzcwf4nUKlYx/BOUILLE_Manley_VencoseNC?node-id=0-1&t=Y5bY7yGDNFI88zfR-1)
 
 ---
 
@@ -40,8 +40,8 @@ Vencose.nc est une application web de vente en ligne (particuliers à particulie
 ### Cloner le dépôt
 
 ```bash
-git clone https://github.com/kibagami-nc/ProjetWeb-VencoseNC.git
-cd ProjetWeb-VencoseNC
+git clone https://github.com/kibagami-nc/BOUILLE_Manley_Projet_Web_VencoseNC.git
+cd BOUILLE_Manley_Projet_Web_VencoseNC
 ```
 
 ### Lancer le back-end
