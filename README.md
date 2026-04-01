@@ -20,11 +20,17 @@ Vencose.nc est une application web de vente en ligne (particuliers à particulie
 
 ## Stack technique
 
-| Couche | Technologie |
-|---|---|
-| Front-end | Angular |
-| Back-end | Java 17 — Spring Boot (Maven) |
-| Base de données | PostgreSQL |
+| Couche | Technologie                     |
+|-----------|---------------------------------|
+| Front-end | Angular                         |
+| Back-end | Java 17 — Spring Boot (Maven)   |
+| Base de données | PostgreSQL                      |
+
+## Outils
+| Nom      | Utilisation        |
+|----------|--------------------|
+| DBeaver  | Base de données    |
+| [MailHog](https://github.com/mailhog/MailHog)  | Serveur smtp local |
 
 ---
 
