@@ -7,7 +7,6 @@ Vencose.nc est une application web de vente en ligne (particuliers à particulie
 
 ## Liens du projet
 
-- **Tableau Kanban (suivi des tâches)** : [GitHub Projects](https://github.com/users/kibagami-nc/projects/4)
 - **Maquettes Figma** : [Vencose.nc — Design](https://www.figma.com/site/jzYelDeQAQlzcwf4nUKlYx/BOUILLE_Manley_VencoseNC?node-id=0-1&t=Y5bY7yGDNFI88zfR-1)
 
 ---
@@ -23,7 +22,7 @@ Vencose.nc est une application web de vente en ligne (particuliers à particulie
 | Couche | Technologie                     |
 |-----------|---------------------------------|
 | Front-end | Angular                         |
-| Back-end | Java 17 — Spring Boot (Maven)   |
+| Back-end | PHP   |
 | Base de données | PostgreSQL                      |
 
 ## Outils
@@ -46,8 +45,7 @@ docker run -d \
 ### Prérequis
 
 - Node.js et Angular CLI installés
-- JDK 17
-- Maven
+- PHP
 - PostgreSQL
 
 ### Cloner le dépôt
@@ -57,14 +55,7 @@ git clone https://github.com/kibagami-nc/BOUILLE_Manley_Projet_Web_VencoseNC.git
 cd BOUILLE_Manley_Projet_Web_VencoseNC
 ```
 
-### Lancer le back-end
-
-```bash
-cd backend
-mvn spring-boot:run
-```
-
-### Lancer le front-end (se mettre dans le dossier 'webapp')
+### Lancer le front-end
 
 ```bash
 cd frontend
