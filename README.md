@@ -32,6 +32,13 @@ Vencose.nc est une application web de vente en ligne (particuliers à particulie
 | DBeaver  | Base de données    |
 | [MailHog](https://github.com/mailhog/MailHog)  | Serveur smtp local |
 
+```bash
+docker run -d \
+  --name mailhog \
+  -p 1025:1025 \
+  -p 8025:8025 \
+  mailhog/mailhog
+```
 ---
 
 ## Installation et lancement
