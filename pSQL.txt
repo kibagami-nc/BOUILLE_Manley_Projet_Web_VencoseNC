@@ -1,0 +1,44 @@
+CREATE TABLE users (
+    id_user SERIAL PRIMARY KEY,
+    last_name VARCHAR(50) NOT NULL,
+    first_name VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    phone_mobile VARCHAR(20),
+    phone_landline VARCHAR(20),
+    password VARCHAR(255) NOT NULL,
+    registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    is_active BOOLEAN DEFAULT TRUE
+);
+
+CREATE TABLE bids (
+    id_bid SERIAL PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
+    description VARCHAR(1000) NOT NULL,
+    creation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fk_id_user INTEGER NOT NULL,
+    FOREIGN KEY (fk_id_user) REFERENCES users(id_user)
+);
+
+CREATE TABLE photos (
+    id_photo SERIAL PRIMARY KEY,
+    photo_url VARCHAR(255) NOT NULL,
+    fk_id_bid INTEGER NOT NULL,
+    FOREIGN KEY (fk_id_bid) REFERENCES bids(id_bid)
+);
+
+CREATE TABLE threads (
+    id_thread SERIAL PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
+    fk_id_bid INTEGER NOT NULL,
+    FOREIGN KEY (fk_id_bid) REFERENCES bids(id_bid)
+);
+
+CREATE TABLE messages (
+    id_message SERIAL PRIMARY KEY,
+    content VARCHAR(1000) NOT NULL,
+    sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fk_id_thread INTEGER NOT NULL,
+    fk_id_user INTEGER NOT NULL,
+    FOREIGN KEY (fk_id_thread) REFERENCES threads(id_thread),
+    FOREIGN KEY (fk_id_user) REFERENCES users(id_user)
+);
