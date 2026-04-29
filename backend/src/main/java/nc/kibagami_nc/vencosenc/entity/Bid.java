@@ -1,39 +1,50 @@
 package nc.kibagami_nc.vencosenc.entity;
 
-import org.jspecify.annotations.Nullable;
+import java.time.LocalDateTime;
+import java.util.Set;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "bids")
 @Getter
 @Setter
-@NoArgsConstructor
 public class Bid {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_bid")
-    private Long idId;
+    private Long idBid;
 
-    @Column(name = "title")
-    private title;
+    @Column(name = "title", nullable = false, length = 100)
+    private String title;
 
-    @Column(name = "description")
-    private description;
+    @Column(name = "description", nullable = false, length = 1000)
+    private String description;
 
     @Column(name = "creation_date")
-    private creationDate;
+    private LocalDateTime creationDate;
 
-    @Column(name = "fk_id_user")
-    private fkIdUser;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "fk_id_user", nullable = false)
+    private User user;
 
+    @OneToMany(mappedBy = "bid", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Photo> photos;
+
+    @OneToMany(mappedBy = "bid", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Thread> threads;
 }

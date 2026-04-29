@@ -43,6 +43,27 @@ CREATE TABLE messages (
     FOREIGN KEY (fk_id_user) REFERENCES users(id_user)
 );
 
+CREATE TABLE users_threads (
+    fk_id_user INTEGER NOT NULL,
+    fk_id_thread INTEGER NOT NULL,
+    PRIMARY KEY (fk_id_user, fk_id_thread),
+    FOREIGN KEY (fk_id_user) REFERENCES users(id_user),
+    FOREIGN KEY (fk_id_thread) REFERENCES threads(id_thread)
+);
+
+CREATE TABLE roles (
+    id_role SERIAL PRIMARY KEY,
+    role VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE users_roles (
+    fk_id_user INTEGER NOT NULL,
+    fk_id_role INTEGER NOT NULL,
+    PRIMARY KEY (fk_id_user, fk_id_role),
+    FOREIGN KEY (fk_id_user) REFERENCES users(id_user),
+    FOREIGN KEY (fk_id_role) REFERENCES roles(id_role)
+);
+
 
 
 
