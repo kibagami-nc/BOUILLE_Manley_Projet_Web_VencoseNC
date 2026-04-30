@@ -1,0 +1,16 @@
+<app-pub-navbar></app-pub-navbar>
+<router-outlet></router-outlet>
+<app-pub-footer></app-pub-footer>
+
+@if (modal.current() !== null) {
+  <div class="modal-backdrop" (click)="modal.close()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      @if (modal.current() === 'login') {
+        <app-login></app-login>
+      }
+      @if (modal.current() === 'register') {
+        <app-register></app-register>
+      }
+    </div>
+  </div>
+}

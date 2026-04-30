@@ -1,0 +1,50 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2.5rem 4rem;
+  background-color: #b5b5b5;
+  min-height: 220px;
+}
+
+.footer-brand .brand-name {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.footer-brand .brand-tagline {
+  margin: 0.4rem 0 0 0;
+  font-size: 0.95rem;
+  color: #6b6b6b;
+}
+
+.footer-links .links-title {
+  margin: 0 0 0.8rem 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: right;
+}
+
+.footer-links .links-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+.footer-links .links-list li {
+  margin-bottom: 0.4rem;
+}
+
+.footer-links .links-list a {
+  color: #6b6b6b;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.footer-links .links-list a:hover {
+  color: #1a1a1a;
+}
