@@ -8,10 +8,7 @@ import nc.kibagami_nc.vencosenc.entity.User;
 @Component
 public class UserMapper {
 
-    /*
-     * Sortie (BDD -> API) : convertit l'entite User lue en BDD en UserDto a renvoyer en JSON.
-     * Utilise dans findAll(), findById(), et a la fin de create()/update() pour renvoyer le resultat.
-     */
+    // Entite -> DTO (pour envoyer au front)
     public UserDto toDto(User user) {
 
         if (user == null) return null;
@@ -30,10 +27,7 @@ public class UserMapper {
         return dto;
     }
 
-    /*
-     * Entree (API -> BDD) : construit une NOUVELLE entite User a partir du DTO recu du front.
-     * Utilise dans create(), pour transformer le payload JSON en entite a sauver.
-     */
+    // DTO -> Entite (pour creer un User)
     public User toEntity(UserDto dto) {
 
         if (dto == null) return null;
@@ -52,12 +46,7 @@ public class UserMapper {
         return user;
     }
 
-    /*
-     * Entree sur entite existante : modifie une entite User deja chargee depuis la BDD.
-     * Different de toEntity : on ne cree PAS une nouvelle entite, on met a jour les champs modifiables.
-     * On NE touche PAS a idUser ni a registrationDate (champs immuables).
-     * Utilise dans update().
-     */
+    // Maj d'un User existant (touche pas a l'ID ni a la date d'inscription)
     public void updateEntity(User user, UserDto dto) {
 
         user.setLastName(dto.getLastName());

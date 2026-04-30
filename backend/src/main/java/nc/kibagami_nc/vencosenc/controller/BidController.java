@@ -8,9 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import lombok.RequiredArgsConstructor;
 import nc.kibagami_nc.vencosenc.dto.BidDto;
 import nc.kibagami_nc.vencosenc.entity.Bid;
-import nc.kibagami_nc.vencosenc.entity.User;
+import nc.kibagami_nc.vencosenc.mapper.BidMapper;
 import nc.kibagami_nc.vencosenc.repository.BidRepository;
-import nc.kibagami_nc.vencosenc.repository.UserRepository;
 
 @RestController
 @RequestMapping("/api/bid")
@@ -18,46 +17,38 @@ import nc.kibagami_nc.vencosenc.repository.UserRepository;
 public class BidController {
 
     private final BidRepository bidRepository;
-    private final UserRepository userRepository;
+    private final BidMapper bidMapper;
 
     /*
      * Utilisation du BidDto.java pour l'affichage, suppression, modification et création
      */
 
-    //TODO: Faire le mapper pour soulager le controller
-
     @GetMapping
     public List<BidDto> findAll() {
-        return bidRepository.findAll().stream().map(BidDto::fromEntity).toList();
-    }
-
-    @GetMapping("/{id}")
-    public BidDto findById(@PathVariable Long id) {
-        return BidDto.fromEntity(bidRepository.findById(id).orElseThrow());
+        return bidRepository.findAll().stream().map(bidMapper::toDto).toList();
     }
 
     @PostMapping
     public BidDto create(@RequestBody BidDto dto) {
 
-        Bid bid = new Bid();
-
-        bid.setTitle(dto.getTitle());
-        bid.setDescription(dto.getDescription());
+        Bid bid = bidMapper.toEntity(dto);
         bid.setCreationDate(LocalDateTime.now());
-        User user = userRepository.findById(dto.getUserId()).orElseThrow();
 
-        bid.setUser(user);
+        return bidMapper.toDto(bidRepository.save(bid));
+    }
 
-        return BidDto.fromEntity(bidRepository.save(bid));
+    @GetMapping("/{id}")
+    public BidDto findById(@PathVariable Long id) {
+        return bidMapper.toDto(bidRepository.findById(id).orElseThrow());
     }
 
     @PutMapping("/{id}")
     public BidDto update(@PathVariable Long id, @RequestBody BidDto dto) {
-        Bid bid = bidRepository.findById(id).orElseThrow();
-        bid.setTitle(dto.getTitle());
-        bid.setDescription(dto.getDescription());
 
-        return BidDto.fromEntity(bidRepository.save(bid));
+        Bid bid = bidRepository.findById(id).orElseThrow();
+        bidMapper.updateEntity(bid, dto);
+
+        return bidMapper.toDto(bidRepository.save(bid));
     }
 
     @DeleteMapping("/{id}")

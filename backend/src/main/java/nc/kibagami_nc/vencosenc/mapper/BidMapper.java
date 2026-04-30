@@ -12,17 +12,10 @@ import nc.kibagami_nc.vencosenc.repository.UserRepository;
 @RequiredArgsConstructor
 public class BidMapper {
 
-    /*
-     * Injecte pour resoudre un userId (envoye par le front) en vraie entite User
-     * lors du toEntity. Sans ca, JPA refuserait la sauvegarde puisque Bid.user est nullable=false.
-     */
+    // Sert a retrouver le User a partir du userId du DTO
     private final UserRepository userRepository;
 
-    /*
-     * Sortie (BDD -> API) : convertit l'entite Bid lue en BDD en BidDto a renvoyer en JSON.
-     * Particularite : la relation User est aplatie en simple userId pour eviter
-     * de serialiser tout l'objet User imbrique (recursion, lazy-loading, payload enorme).
-     */
+    // Entite -> DTO (garde juste le userId pour eviter d'envoyer tout le User)
     public BidDto toDto(Bid bid) {
 
         if (bid == null) return null;
@@ -37,11 +30,7 @@ public class BidMapper {
         return dto;
     }
 
-    /*
-     * Entree (API -> BDD) : construit une NOUVELLE entite Bid a partir du DTO recu du front.
-     * Particularite : il faut resoudre le userId du DTO en vraie entite User via le repository.
-     * Utilise dans create().
-     */
+    // Dto -> entite (va chercher le vrai User en BDD avec le userId)
     public Bid toEntity(BidDto dto) {
 
         if (dto == null) return null;
@@ -60,13 +49,7 @@ public class BidMapper {
         return bid;
     }
 
-    /*
-     * Entree sur entite existante : modifie une entite Bid deja chargee depuis la BDD.
-     * Tres restrictif volontairement : seuls title et description sont modifiables.
-     * Regle metier : on ne veut pas qu'un PUT permette de changer le proprietaire (User)
-     * ni de falsifier la date de creation.
-     * Utilise dans update().
-     */
+    // Maj d'une bid existante (juste le titre et la description)
     public void updateEntity(Bid bid, BidDto dto) {
 
         bid.setTitle(dto.getTitle());
