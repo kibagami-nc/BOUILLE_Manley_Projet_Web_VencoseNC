@@ -1,14 +1,37 @@
 <section class="bid-list">
   @for (bid of bids; track bid.idBid) {
-    <article class="bid-card">
-      <div class="bid-image">
-        <img src="https://placehold.co/120x120?text=img" alt="Photo de l'annonce">
+    <div class="bid-item" [class.is-open]="isOpen(bid.idBid)">
+      <article
+        class="bid-card"
+        (click)="toggle(bid.idBid)"
+        (keydown.enter)="toggle(bid.idBid)"
+        tabindex="0"
+        role="button"
+        [attr.aria-expanded]="isOpen(bid.idBid)"
+      >
+        <div class="bid-image">
+          <img src="https://placehold.co/120x120?text=img" alt="Photo de l'annonce">
+        </div>
+        <div class="bid-content">
+          <h3 class="bid-title">{{ bid.title }}</h3>
+          <p class="bid-description">{{ bid.description }}</p>
+        </div>
+        <svg class="bid-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </article>
+
+      <div class="bid-drawer">
+        <div class="bid-drawer-inner">
+          <div class="bid-drawer-content">
+            <p><strong>Description complete :</strong></p>
+            <p>{{ bid.description }}</p>
+            <p class="bid-meta">Publiee le : {{ bid.creationDate | date:'dd/MM/yyyy' }}</p>
+            <p class="bid-meta">Vendeur : utilisateur #{{ bid.userId }}</p>
+          </div>
+        </div>
       </div>
-      <div class="bid-content">
-        <h3 class="bid-title">{{ bid.title }}</h3>
-        <p class="bid-description">{{ bid.description }}</p>
-      </div>
-    </article>
+    </div>
   } @empty {
     <p class="bid-empty">Aucune annonce pour le moment.</p>
   }
