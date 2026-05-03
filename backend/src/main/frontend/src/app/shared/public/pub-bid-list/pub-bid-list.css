@@ -1,0 +1,80 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.bid-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 900px;
+  margin: 2rem auto 0 auto;
+  box-sizing: border-box;
+}
+
+.bid-card {
+  display: flex;
+  align-items: stretch;
+  gap: 1.5rem;
+  background-color: #d0d0d0;
+  border-radius: 1.5rem;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.bid-image {
+  flex: 0 0 140px;
+  height: 140px;
+  background-color: #e8e8e8;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bid-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bid-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+.bid-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.bid-subtitle {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #4a4a4a;
+}
+
+.bid-description {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #4a4a4a;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.bid-empty {
+  text-align: center;
+  color: #6b6b6b;
+  font-style: italic;
+}
