@@ -18,16 +18,19 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final UserMapper userMapper;
 
+    // Recupere tous les utilisateurs et les renvoie en DTO
     @Override
     public List<UserDto> findAll() {
         return userRepository.findAll().stream().map(userMapper::toDto).toList();
     }
 
+    // Cherche un utilisateur par son id (exception s'il n'existe pas)
     @Override
     public UserDto findById(Long id) {
         return userMapper.toDto(userRepository.findById(id).orElseThrow());
     }
 
+    // Cree un utilisateur (date d'inscription auto + compte actif par defaut)
     @Override
     public UserDto create(UserDto dto) {
 
@@ -38,6 +41,7 @@ public class UserServiceImpl implements UserService {
         return userMapper.toDto(userRepository.save(user));
     }
 
+    // Recupere un utilisateur existant et met a jour ses champs
     @Override
     public UserDto update(Long id, UserDto dto) {
 
@@ -47,6 +51,7 @@ public class UserServiceImpl implements UserService {
         return userMapper.toDto(userRepository.save(user));
     }
 
+    // Supprime un utilisateur par son id
     @Override
     public void delete(Long id) {
         userRepository.deleteById(id);

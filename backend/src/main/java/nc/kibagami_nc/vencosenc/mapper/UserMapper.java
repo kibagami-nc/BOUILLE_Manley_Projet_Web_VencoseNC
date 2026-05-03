@@ -8,7 +8,7 @@ import nc.kibagami_nc.vencosenc.entity.User;
 @Component
 public class UserMapper {
 
-    // Entite -> DTO (pour envoyer au front)
+    // Convertit une entite User en DTO (pour envoyer les donnees au front)
     public UserDto toDto(User user) {
 
         if (user == null) return null;
@@ -27,7 +27,7 @@ public class UserMapper {
         return dto;
     }
 
-    // DTO -> Entite (pour creer un User)
+    // Convertit un DTO en entite User (utilise pour la creation)
     public User toEntity(UserDto dto) {
 
         if (dto == null) return null;
@@ -46,7 +46,7 @@ public class UserMapper {
         return user;
     }
 
-    // Maj d'un User existant (touche pas a l'ID ni a la date d'inscription)
+    // Met a jour un User existant (on touche pas a l'id ni a la date d'inscription)
     public void updateEntity(User user, UserDto dto) {
 
         user.setLastName(dto.getLastName());

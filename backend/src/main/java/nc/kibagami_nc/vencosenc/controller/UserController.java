@@ -23,11 +23,13 @@ public class UserController {
      * Utilisation du UserDto.java pour l'affichage, suppression, modification et création
      */
 
+    // GET /api/user -> renvoie la liste de tous les utilisateurs
     @GetMapping
     public List<UserDto> findAll() {
         return userRepository.findAll().stream().map(userMapper::toDto).toList();
     }
 
+    // POST /api/user -> cree un nouvel utilisateur (date d'inscription auto + actif par defaut)
     @PostMapping
     public UserDto create(@RequestBody UserDto dto) {
 
@@ -38,11 +40,13 @@ public class UserController {
         return userMapper.toDto(userRepository.save(user));
     }
 
+    // GET /api/user/{id} -> renvoie un utilisateur par son id
     @GetMapping("/{id}")
     public UserDto findById(@PathVariable Long id) {
         return userMapper.toDto(userRepository.findById(id).orElseThrow());
     }
 
+    // PUT /api/user/{id} -> modifie un utilisateur existant
     @PutMapping("/{id}")
     public UserDto update(@PathVariable Long id, @RequestBody UserDto dto) {
 
@@ -52,6 +56,7 @@ public class UserController {
         return userMapper.toDto(userRepository.save(user));
     }
 
+    // DELETE /api/user/{id} -> supprime l'utilisateur correspondant
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         userRepository.deleteById(id);

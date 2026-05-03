@@ -23,11 +23,13 @@ public class BidController {
      * Utilisation du BidDto.java pour l'affichage, suppression, modification et création
      */
 
+    // GET /api/bid -> renvoie la liste de toutes les annonces
     @GetMapping
     public List<BidDto> findAll() {
         return bidRepository.findAll().stream().map(bidMapper::toDto).toList();
     }
 
+    // POST /api/bid -> cree une nouvelle annonce a partir du DTO recu
     @PostMapping
     public BidDto create(@RequestBody BidDto dto) {
 
@@ -37,11 +39,13 @@ public class BidController {
         return bidMapper.toDto(bidRepository.save(bid));
     }
 
+    // GET /api/bid/{id} -> renvoie une annonce precise par son id
     @GetMapping("/{id}")
     public BidDto findById(@PathVariable Long id) {
         return bidMapper.toDto(bidRepository.findById(id).orElseThrow());
     }
 
+    // PUT /api/bid/{id} -> modifie une annonce existante
     @PutMapping("/{id}")
     public BidDto update(@PathVariable Long id, @RequestBody BidDto dto) {
 
@@ -51,6 +55,7 @@ public class BidController {
         return bidMapper.toDto(bidRepository.save(bid));
     }
 
+    // DELETE /api/bid/{id} -> supprime l'annonce correspondante
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         bidRepository.deleteById(id);

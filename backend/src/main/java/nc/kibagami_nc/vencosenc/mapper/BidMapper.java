@@ -15,7 +15,7 @@ public class BidMapper {
     // Sert a retrouver le User a partir du userId du DTO
     private final UserRepository userRepository;
 
-    // Entite -> DTO (garde juste le userId pour eviter d'envoyer tout le User)
+    // Convertit une entite Bid en DTO (on garde juste le userId au lieu de tout le User)
     public BidDto toDto(Bid bid) {
 
         if (bid == null) return null;
@@ -30,7 +30,7 @@ public class BidMapper {
         return dto;
     }
 
-    // Dto -> entite (va chercher le vrai User en BDD avec le userId)
+    // Convertit un DTO en entite Bid (et va chercher le User en BDD via le userId)
     public Bid toEntity(BidDto dto) {
 
         if (dto == null) return null;
@@ -49,7 +49,7 @@ public class BidMapper {
         return bid;
     }
 
-    // Maj d'une bid existante (juste le titre et la description)
+    // Met a jour une annonce existante (seulement titre et description)
     public void updateEntity(Bid bid, BidDto dto) {
 
         bid.setTitle(dto.getTitle());
