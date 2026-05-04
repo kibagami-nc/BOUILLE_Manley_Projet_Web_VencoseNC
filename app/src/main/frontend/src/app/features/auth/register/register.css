@@ -82,6 +82,24 @@
   border-color: #1ea64a;
 }
 
+.form-group input::placeholder {
+  color: #b0b0b0;
+  font-style: italic;
+}
+
+.required {
+  color: #c0392b;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.optional {
+  color: #888;
+  font-size: 0.85rem;
+  font-weight: 400;
+  font-style: italic;
+}
+
 .register-btn {
   margin-top: 1rem;
   padding: 0.8rem 1.2rem;
@@ -96,6 +114,11 @@
 
 .register-btn:hover {
   background-color: #178a3c;
+}
+
+.register-btn:disabled {
+  background-color: #b5b5b5;
+  cursor: not-allowed;
 }
 
 .register-error {

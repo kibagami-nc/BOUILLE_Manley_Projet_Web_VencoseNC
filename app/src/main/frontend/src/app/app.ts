@@ -4,12 +4,13 @@ import { RouterOutlet } from '@angular/router';
 import { PubNavbar, PubFooter } from './shared/public';
 import { Login } from './features/auth/login/login';
 import { Register } from './features/auth/register/register';
+import { Logout } from './features/auth/logout/logout';
 import { ModalService } from './shared/services/modal.service';
 import { AuthService } from './shared/services/auth.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, PubNavbar, PubFooter, Login, Register],
+  imports: [RouterOutlet, PubNavbar, PubFooter, Login, Register, Logout],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

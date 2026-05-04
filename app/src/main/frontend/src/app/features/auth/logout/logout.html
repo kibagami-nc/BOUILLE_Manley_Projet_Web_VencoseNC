@@ -1,0 +1,11 @@
+<div class="logout-card">
+  <button type="button" class="modal-close" (click)="modal.close()" aria-label="Fermer">&times;</button>
+
+  <h1 class="logout-title">Deconnexion</h1>
+  <p class="logout-text">Etes-vous sur de vouloir vous deconnecter ?</p>
+
+  <div class="logout-actions">
+    <button type="button" class="logout-btn cancel" (click)="modal.close()">Annuler</button>
+    <button type="button" class="logout-btn confirm" (click)="confirm()">Oui, me deconnecter</button>
+  </div>
+</div>

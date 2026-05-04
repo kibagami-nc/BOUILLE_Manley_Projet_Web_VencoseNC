@@ -3,50 +3,50 @@
 
   <h1 class="register-title">Inscription</h1>
 
-  <form class="register-form" (ngSubmit)="onSubmit()">
+  <form class="register-form" #registerForm="ngForm" (ngSubmit)="onSubmit()">
     <div class="form-row">
       <div class="form-group">
-        <label for="lastName">Nom</label>
-        <input id="lastName" type="text" name="lastName" autocomplete="family-name" [(ngModel)]="lastName" required>
+        <label for="lastName">Nom <span class="required">*</span></label>
+        <input id="lastName" type="text" name="lastName" autocomplete="family-name" placeholder="Dupont" [(ngModel)]="lastName" required>
       </div>
 
       <div class="form-group">
-        <label for="firstName">Prenom</label>
-        <input id="firstName" type="text" name="firstName" autocomplete="given-name" [(ngModel)]="firstName" required>
+        <label for="firstName">Prenom <span class="required">*</span></label>
+        <input id="firstName" type="text" name="firstName" autocomplete="given-name" placeholder="Jean" [(ngModel)]="firstName" required>
       </div>
     </div>
 
     <div class="form-group">
-      <label for="email">Email</label>
-      <input id="email" type="email" name="email" autocomplete="email" [(ngModel)]="email" required>
+      <label for="email">Email <span class="required">*</span></label>
+      <input id="email" type="email" name="email" autocomplete="email" placeholder="exemple@mail.com" [(ngModel)]="email" required>
     </div>
 
     <div class="form-row">
       <div class="form-group">
         <label for="phoneMobile">Telephone mobile</label>
-        <input id="phoneMobile" type="tel" name="phoneMobile" autocomplete="tel" [(ngModel)]="phoneMobile">
+        <input id="phoneMobile" type="tel" name="phoneMobile" autocomplete="tel" placeholder="78 12 34" [(ngModel)]="phoneMobile">
       </div>
 
       <div class="form-group">
         <label for="phoneLandline">Telephone fixe</label>
-        <input id="phoneLandline" type="tel" name="phoneLandline" [(ngModel)]="phoneLandline">
+        <input id="phoneLandline" type="tel" name="phoneLandline" placeholder="24 12 34" [(ngModel)]="phoneLandline">
       </div>
     </div>
 
     <div class="form-group">
-      <label for="password">Mot de passe</label>
-      <input id="password" type="password" name="password" autocomplete="new-password" [(ngModel)]="password" required>
+      <label for="password">Mot de passe <span class="required">*</span></label>
+      <input id="password" type="password" name="password" autocomplete="new-password" placeholder="8 caracteres minimum" [(ngModel)]="password" required>
     </div>
 
     <div class="form-group">
-      <label for="confirmPassword">Confirmer le mot de passe</label>
-      <input id="confirmPassword" type="password" name="confirmPassword" autocomplete="new-password" [(ngModel)]="confirmPassword" required>
+      <label for="confirmPassword">Confirmer le mot de passe <span class="required">*</span></label>
+      <input id="confirmPassword" type="password" name="confirmPassword" autocomplete="new-password" placeholder="Retapez le mot de passe" [(ngModel)]="confirmPassword" required>
     </div>
 
     @if (errorMessage()) {
       <p class="register-error">{{ errorMessage() }}</p>
     }
 
-    <button type="submit" class="register-btn">S'enregistrer</button>
+    <button type="submit" class="register-btn" [disabled]="registerForm.invalid">S'enregistrer</button>
   </form>
 </div>
