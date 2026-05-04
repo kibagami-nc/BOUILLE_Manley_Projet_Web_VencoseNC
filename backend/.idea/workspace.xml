@@ -4,107 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="274529e4-ff67-4101-8893-adaaf1d58899" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/.postcssrc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/app.config.server.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/app.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/app.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/app.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/app.routes.server.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/app.routes.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/app.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/app.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/features/admin/admin-accounts/admin-accounts.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/features/admin/admin-accounts/admin-accounts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/features/admin/admin-accounts/admin-accounts.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/features/admin/admin-accounts/admin-accounts.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/features/admin/admin-stats/admin-stats.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/features/admin/admin-stats/admin-stats.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/features/admin/admin-stats/admin-stats.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/features/admin/admin-stats/admin-stats.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/features/admin/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/features/auth/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/features/auth/login/login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/features/auth/login/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/features/auth/login/login.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/features/auth/login/login.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/features/auth/register/register.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/features/auth/register/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/features/auth/register/register.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/features/auth/register/register.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/features/main/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/features/main/main-hero/main-hero.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/features/main/main-hero/main-hero.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/features/main/main-hero/main-hero.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/features/main/main-hero/main-hero.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/features/profil/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/features/profil/profil/profil.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/features/profil/profil/profil.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/features/profil/profil/profil.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/features/profil/profil/profil.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/shared/models/bid.model.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/shared/public/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/shared/public/pub-bid-list/pub-bid-list.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/shared/public/pub-bid-list/pub-bid-list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/shared/public/pub-bid-list/pub-bid-list.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/shared/public/pub-footer/pub-footer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/shared/public/pub-footer/pub-footer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/shared/public/pub-footer/pub-footer.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/shared/public/pub-footer/pub-footer.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/shared/public/pub-navbar/pub-navbar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/shared/public/pub-navbar/pub-navbar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/shared/public/pub-navbar/pub-navbar.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/shared/public/pub-navbar/pub-navbar.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/shared/public/pub-search/pub-search.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/shared/public/pub-search/pub-search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/shared/public/pub-search/pub-search.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/shared/public/pub-search/pub-search.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/shared/services/bid.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/app/shared/services/modal.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/main.server.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/server.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/src/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/frontend/tsconfig.spec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nc/kibagami_nc/vencosenc/VencosencApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nc/kibagami_nc/vencosenc/controller/BidController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nc/kibagami_nc/vencosenc/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nc/kibagami_nc/vencosenc/dto/BidDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nc/kibagami_nc/vencosenc/dto/UserDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nc/kibagami_nc/vencosenc/entity/Bid.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nc/kibagami_nc/vencosenc/entity/Message.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nc/kibagami_nc/vencosenc/entity/Photo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nc/kibagami_nc/vencosenc/entity/Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nc/kibagami_nc/vencosenc/entity/Thread.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nc/kibagami_nc/vencosenc/entity/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nc/kibagami_nc/vencosenc/mapper/BidMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nc/kibagami_nc/vencosenc/mapper/UserMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nc/kibagami_nc/vencosenc/repository/BidRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nc/kibagami_nc/vencosenc/repository/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nc/kibagami_nc/vencosenc/service/BidService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nc/kibagami_nc/vencosenc/service/BidServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nc/kibagami_nc/vencosenc/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nc/kibagami_nc/vencosenc/service/UserServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/nc/kibagami_nc/vencosenc/VencosencApplicationTests.java" beforeDir="false" />
-    </list>
+    <list default="true" id="274529e4-ff67-4101-8893-adaaf1d58899" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -129,32 +29,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "Spring Boot.VencosencApplication.executor": "Run",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/kiba/Desktop/Github/BOUILLE_Manley_Projet_Web_VencoseNC/app",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "/home/kiba/Desktop/Github/BOUILLE_Manley_Projet_Web_VencoseNC/backend/src/main/frontend/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.VencosencApplication.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/kiba/Desktop/Github/BOUILLE_Manley_Projet_Web_VencoseNC/app&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/kiba/Desktop/Github/BOUILLE_Manley_Projet_Web_VencoseNC/backend/src/main/frontend/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="VencosencApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="vencosenc" />
@@ -178,6 +78,7 @@
       <workItem from="1777515039087" duration="6602000" />
       <workItem from="1777522152445" duration="2776000" />
       <workItem from="1777768094800" duration="4729000" />
+      <workItem from="1777799720420" duration="17000" />
     </task>
     <servers />
   </component>

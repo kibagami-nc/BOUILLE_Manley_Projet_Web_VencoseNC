@@ -1,0 +1,34 @@
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-title {
+  margin: 0;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 4.5rem;
+  color: #000000;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.hero-subtitle {
+  margin: 0;
+  font-family: 'Annie Use Your Telescope', cursive;
+  font-size: 2.75rem;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.75rem;
+  }
+}

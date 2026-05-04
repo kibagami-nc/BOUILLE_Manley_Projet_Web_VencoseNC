@@ -35,7 +35,7 @@ export class PubBidList implements OnInit {
     }
   }
 
-  // Verifie si une annonce est ouverte (utilise dans le template)
+  // Verifie si une annonce est ouverte
   isOpen(id: number): boolean {
     return this.expandedIds.has(id);
   }

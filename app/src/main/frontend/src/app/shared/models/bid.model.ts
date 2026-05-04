@@ -6,3 +6,5 @@ export interface Bid {
   creationDate: string;
   userId: number;
 }
+
+
