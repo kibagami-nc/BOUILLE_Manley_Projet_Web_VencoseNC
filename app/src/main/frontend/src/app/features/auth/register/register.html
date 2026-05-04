@@ -43,6 +43,10 @@
       <input id="confirmPassword" type="password" name="confirmPassword" autocomplete="new-password" [(ngModel)]="confirmPassword" required>
     </div>
 
+    @if (errorMessage()) {
+      <p class="register-error">{{ errorMessage() }}</p>
+    }
+
     <button type="submit" class="register-btn">S'enregistrer</button>
   </form>
 </div>

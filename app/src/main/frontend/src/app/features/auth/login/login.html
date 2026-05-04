@@ -14,6 +14,10 @@
       <input id="password" type="password" name="password" autocomplete="current-password" [(ngModel)]="password" required>
     </div>
 
+    @if (errorMessage()) {
+      <p class="login-error">{{ errorMessage() }}</p>
+    }
+
     <button type="submit" class="login-btn">Se connecter</button>
   </form>
 </div>

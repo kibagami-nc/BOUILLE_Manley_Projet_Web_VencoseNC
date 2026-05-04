@@ -1,8 +1,9 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
 import { ModalService } from '../../../shared/services/modal.service';
+import { AuthService, AuthUser } from '../../../shared/services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -14,6 +15,7 @@ export class Register {
 
   protected readonly modal = inject(ModalService);
   private readonly http = inject(HttpClient);
+  private readonly auth = inject(AuthService);
 
   lastName = '';
   firstName = '';
@@ -22,16 +24,19 @@ export class Register {
   phoneLandline = '';
   password = '';
   confirmPassword = '';
+  errorMessage = signal('');
 
   onSubmit() {
 
+    this.errorMessage.set('');
+
     if (this.password !== this.confirmPassword) {
-      console.error('Les mots de passe ne correspondent pas');
+      this.errorMessage.set('Les mots de passe ne correspondent pas');
       return;
     }
 
     // POST vers le backend (corps JSON, rien dans l'URL)
-    this.http.post('/api/user', {
+    this.http.post<AuthUser>('http://localhost:8080/api/user', {
       lastName: this.lastName,
       firstName: this.firstName,
       email: this.email,
@@ -39,8 +44,13 @@ export class Register {
       phoneLandline: this.phoneLandline,
       password: this.password,
     }).subscribe({
-      next: () => this.modal.close(),
-      error: (err) => console.error('Erreur d\'inscription', err),
+      next: (user) => {
+        this.auth.setUser(user);
+        this.modal.close();
+      },
+      error: () => {
+        this.errorMessage.set('Erreur lors de l\'inscription');
+      },
     });
   }
 }
