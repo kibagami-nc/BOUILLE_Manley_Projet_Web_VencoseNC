@@ -4,10 +4,11 @@ import { HttpClient } from '@angular/common/http';
 
 import { ModalService } from '../../../shared/services/modal.service';
 import { AuthService, AuthUser } from '../../../shared/services/auth.service';
+import { Icon } from '../../../shared/icon/icon';
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule],
+  imports: [FormsModule, Icon],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
@@ -20,6 +21,11 @@ export class Login {
   email = '';
   password = '';
   errorMessage = signal('');
+  showPassword = signal(false);
+
+  toggleShowPassword() {
+    this.showPassword.set(!this.showPassword());
+  }
 
   onSubmit() {
 

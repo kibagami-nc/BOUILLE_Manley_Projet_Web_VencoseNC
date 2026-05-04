@@ -10,9 +10,11 @@ export class ModalService {
 
   open(name: 'login' | 'register' | 'logout') {
     this.current.set(name);
+    document.body.style.overflow = 'hidden';
   }
 
   close() {
     this.current.set(null);
+    document.body.style.overflow = '';
   }
 }

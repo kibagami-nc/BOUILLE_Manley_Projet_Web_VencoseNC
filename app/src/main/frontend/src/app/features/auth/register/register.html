@@ -35,12 +35,17 @@
 
     <div class="form-group">
       <label for="password">Mot de passe <span class="required">*</span></label>
-      <input id="password" type="password" name="password" autocomplete="new-password" placeholder="8 caracteres minimum" [(ngModel)]="password" required>
+      <div class="password-wrapper">
+        <input id="password" [type]="showPassword() ? 'text' : 'password'" name="password" autocomplete="new-password" placeholder="8 caracteres, une majuscule, une minuscule et un chiffre" [(ngModel)]="password" required>
+        <button type="button" class="password-toggle" (click)="toggleShowPassword()" [attr.aria-label]="showPassword() ? 'Masquer le mot de passe' : 'Afficher le mot de passe'">
+          <app-icon [name]="showPassword() ? 'eye-off' : 'eye'" />
+        </button>
+      </div>
     </div>
 
     <div class="form-group">
       <label for="confirmPassword">Confirmer le mot de passe <span class="required">*</span></label>
-      <input id="confirmPassword" type="password" name="confirmPassword" autocomplete="new-password" placeholder="Retapez le mot de passe" [(ngModel)]="confirmPassword" required>
+      <input id="confirmPassword" [type]="showPassword() ? 'text' : 'password'" name="confirmPassword" autocomplete="new-password" placeholder="Retapez le mot de passe" [(ngModel)]="confirmPassword" required>
     </div>
 
     @if (errorMessage()) {

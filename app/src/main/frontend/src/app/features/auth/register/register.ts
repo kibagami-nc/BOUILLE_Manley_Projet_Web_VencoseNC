@@ -4,10 +4,11 @@ import { HttpClient } from '@angular/common/http';
 
 import { ModalService } from '../../../shared/services/modal.service';
 import { AuthService, AuthUser } from '../../../shared/services/auth.service';
+import { Icon } from '../../../shared/icon/icon';
 
 @Component({
   selector: 'app-register',
-  imports: [FormsModule],
+  imports: [FormsModule, Icon],
   templateUrl: './register.html',
   styleUrl: './register.css',
 })
@@ -25,10 +26,25 @@ export class Register {
   password = '';
   confirmPassword = '';
   errorMessage = signal('');
+  showPassword = signal(false);
+
+  toggleShowPassword() {
+    this.showPassword.set(!this.showPassword());
+  }
 
   onSubmit() {
 
     this.errorMessage.set('');
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.email)) {
+      this.errorMessage.set('L\'email n\'est pas valide');
+      return;
+    }
+
+    if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/.test(this.password)) {
+      this.errorMessage.set('Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule et un chiffre');
+      return;
+    }
 
     if (this.password !== this.confirmPassword) {
       this.errorMessage.set('Les mots de passe ne correspondent pas');
@@ -43,6 +59,7 @@ export class Register {
       phoneMobile: this.phoneMobile,
       phoneLandline: this.phoneLandline,
       password: this.password,
+
     }).subscribe({
       next: (user) => {
         this.auth.setUser(user);

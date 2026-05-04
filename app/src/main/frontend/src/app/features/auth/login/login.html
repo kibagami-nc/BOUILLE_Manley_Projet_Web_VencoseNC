@@ -11,7 +11,12 @@
 
     <div class="form-group">
       <label for="password">Mot de passe <span class="required">*</span></label>
-      <input id="password" type="password" name="password" autocomplete="current-password" placeholder="********" [(ngModel)]="password" required>
+      <div class="password-wrapper">
+        <input id="password" [type]="showPassword() ? 'text' : 'password'" name="password" autocomplete="current-password" placeholder="********" [(ngModel)]="password" required>
+        <button type="button" class="password-toggle" (click)="toggleShowPassword()" [attr.aria-label]="showPassword() ? 'Masquer le mot de passe' : 'Afficher le mot de passe'">
+          <app-icon [name]="showPassword() ? 'eye-off' : 'eye'" />
+        </button>
+      </div>
     </div>
 
     @if (errorMessage()) {
