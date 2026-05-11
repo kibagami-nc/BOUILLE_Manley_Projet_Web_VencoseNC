@@ -1,0 +1,67 @@
+<section class="messages-page">
+  <aside class="messages-sidebar">
+    <header class="messages-sidebar-header">
+      <h1>Messages</h1>
+    </header>
+
+    <ul class="conversation-list">
+      @for (conv of threads(); track conv.idThread) {
+        <li
+          class="conversation-item"
+          [class.is-active]="conv.idThread === selectedId()"
+          (click)="select(conv.idThread)"
+          (keydown.enter)="select(conv.idThread)"
+          tabindex="0"
+          role="button"
+        >
+          <div class="conversation-avatar">{{ initials(peerName(conv)) }}</div>
+          <div class="conversation-text">
+            <div class="conversation-row">
+              <span class="conversation-name">{{ peerName(conv) || 'Sans nom' }}</span>
+              <span class="conversation-time">{{ formatDateTime(conv.lastMessageAt) }}</span>
+            </div>
+            <p class="conversation-preview">{{ conv.lastMessage || 'Aucun message' }}</p>
+          </div>
+        </li>
+      } @empty {
+        <li class="conversation-empty">Aucune conversation</li>
+      }
+    </ul>
+  </aside>
+
+  <main class="messages-chat">
+    @if (selectedThread(); as conv) {
+      <header class="chat-header">
+        <div class="conversation-avatar conversation-avatar--small">{{ initials(peerName(conv)) }}</div>
+        <h2 class="chat-peer">{{ peerName(conv) || 'Sans nom' }}</h2>
+      </header>
+
+      <div class="chat-thread">
+        @for (msg of messages(); track msg.idMessage) {
+          <div class="chat-message" [class.chat-message--mine]="isMine(msg)">
+            <div class="chat-bubble">{{ msg.content }}</div>
+            @if (isLast(msg)) {
+              <span class="chat-time">{{ formatDateTime(msg.sentAt) }}</span>
+            }
+          </div>
+        } @empty {
+          <p class="chat-empty">Aucun message dans cette conversation</p>
+        }
+      </div>
+
+      <form class="chat-input" (submit)="$event.preventDefault(); send()">
+        <input
+          type="text"
+          class="chat-input-field"
+          placeholder="Ecrire un message..."
+          [(ngModel)]="draft"
+          name="draft"
+          autocomplete="off"
+        >
+        <button type="submit" class="chat-send" [disabled]="!draft.trim()">Envoyer</button>
+      </form>
+    } @else {
+      <p class="chat-empty">Selectionne une conversation pour commencer</p>
+    }
+  </main>
+</section>

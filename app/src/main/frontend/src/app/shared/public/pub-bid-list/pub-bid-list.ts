@@ -1,42 +1,27 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
 
 import { Bid } from '../../models/bid.model';
 import { BidService } from '../../services/bid.service';
+import { ModalService } from '../../services/modal.service';
 
 @Component({
   selector: 'app-pub-bid-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './pub-bid-list.html',
   styleUrl: './pub-bid-list.css',
 })
 export class PubBidList implements OnInit {
 
   private bidService = inject(BidService);
-  bids: Bid[] = [];
-  // Set des ids des annonces actuellement ouvertes (plusieurs en meme temps possible)
-  expandedIds = new Set<number>();
+  protected readonly modal = inject(ModalService);
 
-  // Au chargement du composant, ça va chercher les annonces
+  protected readonly bids = signal<Bid[]>([]);
+
   ngOnInit(): void {
     this.bidService.findAll().subscribe({
-      next: (data) => this.bids = data,
+      next: (data) => this.bids.set(data),
       error: (err) => console.error('Erreur chargement annonces', err),
     });
-  }
-
-  // Ouvre l'annonce cliquee si elle etait fermee, la referme si elle etait ouverte
-  toggle(id: number): void {
-    if (this.expandedIds.has(id)) {
-      this.expandedIds.delete(id);
-    } else {
-      this.expandedIds.add(id);
-    }
-  }
-
-  // Verifie si une annonce est ouverte
-  isOpen(id: number): boolean {
-    return this.expandedIds.has(id);
   }
 }

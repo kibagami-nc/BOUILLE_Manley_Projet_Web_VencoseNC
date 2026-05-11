@@ -15,6 +15,7 @@ CREATE TABLE bids (
     title VARCHAR(100) NOT NULL,
     description VARCHAR(1000) NOT NULL,
     creation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    price INT,
     fk_id_user INTEGER NOT NULL,
     FOREIGN KEY (fk_id_user) REFERENCES users(id_user)
 );
@@ -65,66 +66,97 @@ CREATE TABLE users_roles (
 );
 
 
+-- ============================================
+-- Script d'insertion des données Vencose.nc
+-- ============================================
 
+-- 1. Rôles
+INSERT INTO roles (role) VALUES
+('ADMIN'),
+('USER'),
+('MODERATOR');
 
+-- 2. Utilisateurs
+INSERT INTO users (last_name, first_name, email, phone_mobile, phone_landline, password) VALUES
+('Bouille', 'Manley', 'manley.bouille@vencose.nc', '78.45.12', '24.56.78', '$2a$10$abcdefghijklmnopqrstuv'),
+('Wamytan', 'Lucas', 'lucas.wamytan@vencose.nc', '85.34.21', NULL, '$2a$10$bcdefghijklmnopqrstuvw'),
+('Kabar', 'Sophie', 'sophie.kabar@vencose.nc', '79.12.45', '25.67.89', '$2a$10$cdefghijklmnopqrstuvwx'),
+('Tein', 'Jean-Marc', 'jm.tein@vencose.nc', '76.98.32', NULL, '$2a$10$defghijklmnopqrstuvwxy'),
+('Poadja', 'Emilie', 'emilie.poadja@vencose.nc', '87.65.43', '26.45.12', '$2a$10$efghijklmnopqrstuvwxyz');
 
-INSERT INTO users (last_name, first_name, email, phone_mobile, phone_landline, password, is_active) VALUES
-('Wamejo', 'Manley', 'manley.wamejo@vencose.nc', '87 12 34', '24 56 78', 'Password123!', TRUE),
-('Tein', 'Lea', 'lea.tein@gmail.com', '76 45 89', NULL, 'Password123!', TRUE),
-('Kasovimoin', 'Joseph', 'joseph.k@yahoo.fr', '85 67 12', '41 23 89', 'Motdepasse2024', TRUE),
-('Poigoune', 'Sophie', 'sophie.poigoune@mls.nc', '79 88 23', NULL, 'Sophie2024', TRUE),
-('Boanemoi', 'Pierre', 'pierre.boanemoi@gmail.com', '88 14 56', '46 78 90', 'PierreNc987', TRUE),
-('Goromido', 'Marina', 'marina.g@hotmail.fr', '74 33 67', NULL, 'Marina123', FALSE),
-('Devillers', 'Lucas', 'lucas.devillers@gmail.com', '78 56 34', '25 67 12', 'LucasD456', TRUE),
-('Wenethem', 'Camille', 'camille.w@mls.nc', '87 23 45', NULL, 'Camille789', TRUE);
+-- 3. Association utilisateurs / rôles
+INSERT INTO users_roles (fk_id_user, fk_id_role) VALUES
+(1, 1),
+(1, 2),
+(2, 2),
+(3, 2),
+(3, 3),
+(4, 2),
+(5, 2);
 
-INSERT INTO bids (title, description, fk_id_user) VALUES
-('Toyota Hilux 2018 4x4', 'Toyota Hilux double cabine en tres bon etat, 85000 km, entretien suivi a la concession. Prix 3 800 000 CFP a debattre. Visible a Noumea.', 1),
-('Surf 6''2 Channel Islands', 'Planche de surf Channel Islands modele Rocket en bon etat, quelques traces d''usage. Vendue avec leash et housse. Prix 65 000 CFP.', 2),
-('Frigo americain Samsung', 'Frigo americain Samsung 550L, distributeur d''eau et glacons, achete il y a 2 ans. Prix 180 000 CFP, a recuperer sur place a Dumbea.', 3),
-('Location studio meuble Anse Vata', 'Studio meuble de 30m2 a louer a l''Anse Vata, vue mer partielle, proche commerces. Loyer 95 000 CFP par mois charges comprises.', 4),
-('Cours particuliers maths Terminale', 'Etudiant en BTS SIO propose cours de maths niveau lycee. 3000 CFP de l''heure, deplacement possible sur grand Noumea.', 1),
-('Materiel de plongee complet', 'Ensemble complet de plongee : combi 3mm taille L, palmes, masque, tuba, gilet stab et detendeur. Le tout pour 145 000 CFP.', 5),
-('PS5 avec 3 jeux', 'Console PS5 edition standard, 2 manettes, 3 jeux (FIFA 24, GTA V, Spider-Man 2). Prix 95 000 CFP.', 6),
-('Pirogue traditionnelle', 'Pirogue en bois sculptee a la main, 4 metres, parfait etat. Ideale pour la peche cotiere. Prix 250 000 CFP.', 3),
-('VTT Decathlon Rockrider', 'VTT Rockrider ST 540, taille L, achete en 2023. Tres peu utilise. Prix 75 000 CFP.', 7),
-('iPhone 14 Pro 256Go', 'iPhone 14 Pro noir, 256Go, achete en 2024, sous garantie. Boite et accessoires d''origine. Prix 165 000 CFP.', 2),
-('Cours de tahitien', 'Professeur diplomee donne cours de langue tahitienne tous niveaux. 2500 CFP la seance d''une heure.', 8);
+-- 4. Annonces
+INSERT INTO bids (title, description, price, fk_id_user) VALUES
+('iPhone 14 Pro 256Go', 'iPhone 14 Pro en tres bon etat, achete a Noumea il y a 1 an. Boite et chargeur inclus.', 145000, 2),
+('VTT Rockrider XC100', 'VTT semi-rigide taille L, parfait pour les sentiers du Mont-Dore. Revise recemment.', 65000, 3),
+('Planche de surf 6 pieds 2', 'Shortboard pour vagues moyennes, ideal pour Bourail. Quelques pressions sans gravite.', 35000, 4),
+('PC Gamer RTX 3060', 'Tour gaming avec Ryzen 5 5600X, 16Go RAM, RTX 3060. Parfait pour 1080p ultra.', 220000, 1),
+('Frigo Samsung 350L', 'Refrigerateur double porte, tres peu servi, cause demenagement metropole.', 75000, 5),
+('Cours particuliers Java', 'Etudiant BTS SIO propose cours de programmation Java/Spring Boot. 2500 CFP de l heure.', 2500, 1);
 
+-- 5. Photos
+INSERT INTO photos (photo_url, fk_id_bid) VALUES
+('/uploads/iphone14pro_1.jpg', 1),
+('/uploads/iphone14pro_2.jpg', 1),
+('/uploads/iphone14pro_3.jpg', 1),
+('/uploads/vtt_rockrider_1.jpg', 2),
+('/uploads/vtt_rockrider_2.jpg', 2),
+('/uploads/surf_62_1.jpg', 3),
+('/uploads/pc_gamer_1.jpg', 4),
+('/uploads/pc_gamer_2.jpg', 4),
+('/uploads/frigo_samsung_1.jpg', 5),
+('/uploads/cours_java_1.jpg', 6);
+
+-- 6. Threads
 INSERT INTO threads (title, fk_id_bid) VALUES
-('Negociation prix Hilux', 1),
-('Question kilometrage', 1),
-('Etat de la planche', 2),
-('Disponibilite frigo', 3),
-('Visite studio', 4),
-('Tarifs cours maths', 5),
-('Composition pack plongee', 6),
-('Reservation PS5', 7),
-('Question pirogue', 8),
-('Negociation iPhone', 10);
+('Question sur la batterie iPhone', 1),
+('Negociation iPhone 14 Pro', 1),
+('Disponibilite du VTT', 2),
+('Etat de la planche', 3),
+('Configuration PC Gamer', 4),
+('Cours Java disponibilites', 6);
 
+-- 7. Association utilisateurs / threads
+INSERT INTO users_threads (fk_id_user, fk_id_thread) VALUES
+(2, 1),
+(3, 1),
+(2, 2),
+(4, 2),
+(3, 3),
+(1, 3),
+(4, 4),
+(5, 4),
+(1, 5),
+(2, 5),
+(1, 6),
+(5, 6);
+
+-- 8. Messages
 INSERT INTO messages (content, fk_id_thread, fk_id_user) VALUES
-('Bonjour, est-ce que vous pourriez descendre a 3 500 000 CFP pour le Hilux ?', 1, 5),
-('Bonjour, je peux descendre a 3 700 000 CFP maximum, le vehicule est tres bien entretenu.', 1, 1),
-('Ok, est-ce que je peux venir le voir ce week-end ?', 1, 5),
-('Pas de probleme, samedi matin vers 9h ca vous va ?', 1, 1),
-('Bonjour, le kilometrage est-il certifie par le carnet d''entretien ?', 2, 7),
-('Oui tout a fait, j''ai tout l''historique a la concession Toyota.', 2, 1),
-('Bonjour, la planche a-t-elle deja ete reparee ?', 3, 6),
-('Non aucune reparation, juste des traces d''usage normales sur le pont.', 3, 2),
-('Le frigo est-il toujours disponible ?', 4, 4),
-('Oui toujours dispo, vous pouvez venir le chercher quand vous voulez.', 4, 3),
-('Bonjour, peut-on visiter le studio en semaine apres 17h ?', 5, 7),
-('Oui sans souci, je vous propose mardi a 17h30.', 5, 4),
-('Parfait, je serai la.', 5, 7),
-('Bonjour, faites-vous des forfaits pour plusieurs seances ?', 6, 8),
-('Oui, 25 000 CFP les 10 heures au lieu de 30 000 CFP.', 6, 1),
-('Le pack plongee comprend-il un ordinateur de plongee ?', 7, 2),
-('Non desole, l''ordinateur n''est pas inclus dans le lot.', 7, 5),
-('Je suis interesse par la PS5, est-elle encore dispo ?', 8, 8),
-('Oui toujours dispo.', 8, 6),
-('La pirogue est-elle livree avec une pagaie ?', 9, 4),
-('Oui, deux pagaies sculptees sont incluses dans le prix.', 9, 3),
-('Bonjour, accepteriez-vous 150 000 CFP pour l''iPhone ?', 10, 5),
-('Je peux faire 158 000 CFP, c''est mon dernier prix.', 10, 2),
-('Marche conclu, comment procede-t-on pour le paiement ?', 10, 5);
+('Bonjour, l iPhone est-il toujours disponible ? Quel est l etat de la batterie ?', 1, 3),
+('Bonjour Sophie, oui il est dispo. La batterie est a 89% de capacite.', 1, 2),
+('Parfait, merci pour la reponse rapide. Je reflechis et reviens vers vous.', 1, 3),
+('Salut, accepteriez-vous 130000 CFP au lieu de 145000 ?', 2, 4),
+('Bonjour, je peux descendre a 140000 mais pas en dessous, desole.', 2, 2),
+('OK pour 140000, on peut se voir a Noumea centre cette semaine ?', 2, 4),
+('Vendredi 17h devant la mairie ca vous va ?', 2, 2),
+('Bonjour, le VTT est-il encore a vendre ? Je suis sur Noumea.', 3, 1),
+('Oui toujours disponible. Vous pouvez venir le voir a Magenta quand vous voulez.', 3, 3),
+('Super, je passe demain apres-midi vers 15h si ca vous convient.', 3, 1),
+('La planche a-t-elle deja ete reparee ? Et les derives sont fournies ?', 4, 5),
+('Jamais reparee, juste des pressions superficielles. FCS II x3 incluses.', 4, 4),
+('Le PC tourne bien sur Cyberpunk en ultra ?', 5, 2),
+('Oui, environ 70 fps en 1080p ultra avec DLSS qualite. RT desactive par contre.', 5, 1),
+('Interesse, vous livrez sur Dumbea ?', 5, 2),
+('Bonjour, je debute en Java, vous prenez les grands debutants ?', 6, 5),
+('Bien sur, j adapte le rythme. On peut commencer par les bases POO.', 6, 1),
+('Genial, vous etes dispo le mercredi soir ?', 6, 5);

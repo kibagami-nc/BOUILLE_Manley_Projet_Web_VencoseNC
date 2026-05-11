@@ -24,8 +24,15 @@ public class BidMapper {
         dto.setIdBid(bid.getIdBid());
         dto.setTitle(bid.getTitle());
         dto.setDescription(bid.getDescription());
+        dto.setPrice(bid.getPrice());
         dto.setCreationDate(bid.getCreationDate());
-        dto.setUserId(bid.getUser() != null ? bid.getUser().getIdUser() : null);
+
+        User user = bid.getUser();
+        if (user != null) {
+            dto.setUserId(user.getIdUser());
+            dto.setUserFirstName(user.getFirstName());
+            dto.setUserLastName(user.getLastName());
+        }
 
         return dto;
     }
@@ -39,6 +46,7 @@ public class BidMapper {
         bid.setIdBid(dto.getIdBid());
         bid.setTitle(dto.getTitle());
         bid.setDescription(dto.getDescription());
+        bid.setPrice(dto.getPrice());
         bid.setCreationDate(dto.getCreationDate());
 
         if (dto.getUserId() != null) {
@@ -49,10 +57,11 @@ public class BidMapper {
         return bid;
     }
 
-    // Met a jour une annonce existante (seulement titre et description)
+    // Met a jour une annonce existante (titre, description et prix)
     public void updateEntity(Bid bid, BidDto dto) {
 
         bid.setTitle(dto.getTitle());
         bid.setDescription(dto.getDescription());
+        bid.setPrice(dto.getPrice());
     }
 }

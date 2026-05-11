@@ -35,6 +35,9 @@ public class Bid {
     @Column(name = "description", nullable = false, length = 1000)
     private String description;
 
+    @Column(name = "price")
+    private Integer price;
+
     @Column(name = "creation_date")
     private LocalDateTime creationDate;
 

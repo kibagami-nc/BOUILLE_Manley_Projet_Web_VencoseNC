@@ -1,0 +1,131 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.bid-details {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow: hidden;
+  box-sizing: border-box;
+  min-height: 70vh;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  border-radius: 50%;
+  width: 2.2rem;
+  height: 2.2rem;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #1a1a1a;
+  z-index: 1;
+}
+
+.modal-close:hover {
+  color: #1ea64a;
+}
+
+.bid-details-image {
+  background-color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bid-details-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.bid-details-info {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2rem 1.5rem 2rem;
+  gap: 1.25rem;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.bid-details-title {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+
+.bid-details-price {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0e5023;
+}
+
+.bid-details-meta {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #6b6b6b;
+}
+
+.bid-details-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.bid-details-section h2 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.bid-details-section p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #2a2a2a;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.bid-details-contact {
+  margin-top: auto;
+  padding: 0.85rem 1.2rem;
+  background-color: #1ea64a;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.bid-details-contact:hover {
+  background-color: #178a3c;
+}
+
+@media (max-width: 800px) {
+  .bid-details {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .bid-details-image {
+    aspect-ratio: 1 / 1;
+  }
+}

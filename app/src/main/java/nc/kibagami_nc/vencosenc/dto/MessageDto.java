@@ -7,13 +7,12 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class BidDto {
+public class MessageDto {
 
-    private Long idBid;
-    private String title;
-    private String description;
-    private Integer price;
-    private LocalDateTime creationDate;
+    private Long idMessage;
+    private String content;
+    private LocalDateTime sentAt;
+    private Long threadId;
     private Long userId;
     private String userFirstName;
     private String userLastName;

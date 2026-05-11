@@ -3,10 +3,11 @@ import { RouterLink } from '@angular/router';
 
 import { ModalService } from '../../services/modal.service';
 import { AuthService } from '../../services/auth.service';
+import { Icon } from '../../icon/icon';
 
 @Component({
   selector: 'app-pub-navbar',
-  imports: [RouterLink],
+  imports: [RouterLink, Icon],
   templateUrl: './pub-navbar.html',
   styleUrl: './pub-navbar.css',
 })

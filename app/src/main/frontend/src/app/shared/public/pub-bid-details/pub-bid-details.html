@@ -1,0 +1,27 @@
+@if (modal.selectedBid(); as bid) {
+  <div class="bid-details">
+    <button type="button" class="modal-close" (click)="modal.close()" aria-label="Fermer">&times;</button>
+
+    <div class="bid-details-image">
+      <img src="https://placehold.co/800x800?text=img" alt="Photo de l'annonce">
+    </div>
+
+    <aside class="bid-details-info">
+      <h1 class="bid-details-title">{{ bid.title }}</h1>
+      <p class="bid-details-price">{{ bid.price !== null ? (bid.price + ' XPF') : 'Prix non renseigne' }}</p>
+      <p class="bid-details-meta">Publiee le {{ bid.creationDate | date:'dd/MM/yyyy' }}</p>
+
+      <section class="bid-details-section">
+        <h2>Description</h2>
+        <p>{{ bid.description }}</p>
+      </section>
+
+      <section class="bid-details-section">
+        <h2>Vendeur</h2>
+        <p>{{ bid.userFirstName }} {{ bid.userLastName }}</p>
+      </section>
+
+      <button type="button" class="bid-details-contact">Contacter le vendeur</button>
+    </aside>
+  </div>
+}

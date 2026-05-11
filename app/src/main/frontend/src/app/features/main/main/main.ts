@@ -7,9 +7,9 @@ import { Accueil } from '../accueil/accueil';
 @Component({
   selector: 'app-main-hero',
   imports: [PubSearch, PubBidList, Accueil],
-  templateUrl: './main-hero.html',
-  styleUrl: './main-hero.css',
+  templateUrl: './main.html',
+  styleUrl: './main.css',
 })
-export class MainHero {
+export class Main {
 
 }

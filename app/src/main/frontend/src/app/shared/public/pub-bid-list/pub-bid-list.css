@@ -4,98 +4,41 @@
 }
 
 .bid-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1.5rem;
   width: 100%;
-  max-width: 900px;
-  margin: 2rem auto 0 auto;
+  margin: 2rem 0 0 0;
+  padding: 0 2rem;
   box-sizing: border-box;
-}
-
-.bid-item {
-  display: flex;
-  flex-direction: column;
-  background-color: #d0d0d0;
-  border-radius: 1.5rem;
-  overflow: hidden;
 }
 
 .bid-card {
   display: flex;
-  align-items: stretch;
-  gap: 1.5rem;
-  padding: 1rem;
+  flex-direction: column;
+  aspect-ratio: 1 / 1;
   box-sizing: border-box;
+  background-color: #d0d0d0;
+  border-radius: 1.5rem;
+  overflow: hidden;
   cursor: pointer;
   user-select: none;
   outline: none;
 }
 
 .bid-card:focus-visible {
-  box-shadow: inset 0 0 0 2px #1ea64a;
-  border-radius: 1.5rem;
-}
-
-.bid-chevron {
-  align-self: center;
-  margin-right: 0.5rem;
-  color: #1a1a1a;
-  transition: transform 0.3s ease;
-  flex-shrink: 0;
-}
-
-.bid-item.is-open .bid-chevron {
-  transform: rotate(180deg);
-}
-
-.bid-item.is-open .bid-description {
-  display: none;
-}
-
-.bid-drawer {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.3s ease;
-}
-
-.bid-item.is-open .bid-drawer {
-  grid-template-rows: 1fr;
-}
-
-.bid-drawer-inner {
-  overflow: hidden;
-  min-height: 0;
-}
-
-.bid-drawer-content {
-  padding: 1rem 1.5rem 1.25rem 1.5rem;
-  margin: 0 1rem 1rem 1rem;
-  background-color: #e8e8e8;
-  border-radius: 0.75rem;
-  border-top: 1px solid #b8b8b8;
-}
-
-.bid-drawer-content p {
-  margin: 0.5rem 0;
-  font-size: 0.9rem;
-  color: #2a2a2a;
-}
-
-.bid-meta {
-  font-size: 0.8rem !important;
-  color: #555 !important;
+  box-shadow: 0 0 0 2px #0e5023;
 }
 
 .bid-image {
-  flex: 0 0 140px;
-  height: 140px;
+  flex: 1;
+  width: 100%;
   background-color: #e8e8e8;
-  border-radius: 1rem;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 0;
 }
 
 .bid-image img {
@@ -105,19 +48,22 @@
 }
 
 .bid-content {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 0.6rem;
+  gap: 0.3rem;
   min-width: 0;
+  flex-shrink: 0;
+  padding: 0.75rem 1rem 1rem 1rem;
 }
 
 .bid-title {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #1a1a1a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .bid-subtitle {
@@ -126,15 +72,16 @@
   color: #4a4a4a;
 }
 
-.bid-description {
+.bid-price {
   margin: 0;
-  font-size: 0.85rem;
-  color: #4a4a4a;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0e5023;
+  text-align: center;
+}
+
+.bid-empty {
+  grid-column: 1 / -1;
 }
 
 .bid-empty {

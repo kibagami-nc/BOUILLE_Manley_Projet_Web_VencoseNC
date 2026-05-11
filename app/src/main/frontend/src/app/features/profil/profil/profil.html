@@ -1,1 +1,41 @@
-<p>profil works!</p>
+<section class="profil-page">
+  <div class="profil-avatar">
+    <span class="profil-initials">{{ initials }}</span>
+  </div>
+
+  <h1 class="profil-welcome">
+    Bienvenue,<br>
+    <strong>{{ user.firstName }} {{ user.lastName }}</strong>
+  </h1>
+
+  <div class="profil-card">
+    <div class="profil-grid">
+      <div class="profil-field">
+        <label for="lastName">Nom</label>
+        <input id="lastName" type="text" [value]="user.lastName" disabled>
+      </div>
+
+      <div class="profil-field">
+        <label for="email">Email</label>
+        <input id="email" type="email" [value]="user.email" disabled>
+      </div>
+
+      <div class="profil-field">
+        <label for="firstName">Prenom</label>
+        <input id="firstName" type="text" [value]="user.firstName" disabled>
+      </div>
+
+      <div class="profil-field">
+        <label for="phoneMobile">Telephone 1</label>
+        <input id="phoneMobile" type="tel" [value]="user.phoneMobile" disabled>
+      </div>
+
+      <div class="profil-field profil-field--placeholder"></div>
+
+      <div class="profil-field">
+        <label for="phoneLandline">Telephone 2</label>
+        <input id="phoneLandline" type="tel" [value]="user.phoneLandline" disabled>
+      </div>
+    </div>
+  </div>
+</section>
